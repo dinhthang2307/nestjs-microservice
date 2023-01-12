@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { EventPattern } from '@nestjs/microservices';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Product } from './product.entity';
@@ -10,6 +11,11 @@ export class ProductService {
     ){
         
     }
+
+    @EventPattern('hello')
+   async hello(data:string) {
+    console.log(data)
+   }
 
     async all(): Promise<Product[]> {
         

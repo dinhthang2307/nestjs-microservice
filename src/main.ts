@@ -7,6 +7,7 @@ async function bootstrap() {
   app.enableCors({
     origin: 'http://localhost:4200'
   })
-  await app.listen(8000);
+  await app.listen(8001);
+
 }
 bootstrap();
